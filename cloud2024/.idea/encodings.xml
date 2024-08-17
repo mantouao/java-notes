@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/cloud-commons/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-commons/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-config-naocs-client3377/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-config-naocs-client3377/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-consumer-fegin-order9002/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-consumer-fegin-order9002/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-consumer-order-nacos7002/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-consumer-order-nacos7002/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-consumer-order8002/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-consumer-order8002/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-gateway9527/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-gateway9527/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-provider-payment-nacos7001/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-provider-payment-nacos7001/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-provider-payment8001/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-provider-payment8001/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-provider-payment9001/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-provider-payment9001/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-sentinel-server8401/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-sentinel-server8401/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis_generator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis_generator/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-account/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-account/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-order/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-order/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-storage/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-storage/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

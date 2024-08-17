@@ -1,0 +1,9 @@
+spring:
+  application:
+    name:  nacos-config-client
+  cloud:
+    nacos:
+      config:
+        prefix: binbin
+        server-addr: localhost:8848
+        file-extension: yml

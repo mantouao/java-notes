@@ -1,0 +1,172 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: cloud-consumer-feign-order
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+    openfeign:
+      client:
+        config:
+#          全局超时设置(写default)
+          default:
+            connect-timeout: 4000
+            read-timeout: 4000
+#          局部超时设置(写具体的服务名)
+          cloud-provider-payment:
+            connect-timeout: 20000
+            read-timeout: 20000
+      httpclient:
+        hc5:
+          enabled: true
+      compression:
+        request:
+          # 是否启用压缩
+          enabled: true
+          # 压缩的MIME类型
+          mime-types: text/xml,application/xml,application/json
+          # 最小请求大小
+          min-request-size: 2048
+        response:
+          # 是否启用压缩
+          enabled: false
+      circuitbreaker:
+        enabled: true
+#        group:
+##          分组，更细粒度的控制，没有分组则使用默认的配置
+#          enabled: true
+logging:
+  level:
+    com:
+      atguigu:
+        cloud:
+          feign:
+            FeignAPI: DEBUG
+#resilience4j:
+#  circuitbreaker:
+#    configs:
+#      default:
+#        # 失败率阈值
+#        failureRateThreshold: 50 #超过50%则熔断
+#        # 滑动窗口类型
+#        sliding-window-type: COUNT_BASED #表示使用基于数量的滑动窗口
+#        # 滑动窗口大小
+#        sliding-window-size: 6
+#        # 最小调用次数
+#        minimum-number-of-calls: 6 #计算失败率至少要6个请求
+#        # 自动从打开状态到半开状态
+#        automatic-transition-from-open-to-half-open-enabled: true
+#        # 打开状态的等待时间
+#        wait-duration-in-open-state: 5000
+#        # 半开状态允许的调用次数
+#        permitted-number-of-calls-in-half-open-state: 2 # 半开状态的允许最大的请求数量
+#        # 记录异常
+#        record-exceptions:
+#          - java.lang.Exception
+#    instances:
+#      # 服务的实例（为哪个服务配置断路器）
+#      cloud-provider-payment:
+#        # 使用default配置
+#        base-config: default
+#resilience4j:
+#  timelimiter:
+#    configs:
+#      default:
+#        # 设置超时时间
+#        timeout-duration:  10s
+#  circuitbreaker:
+#    configs:
+#      default:
+#        # 失败率阈值
+#        failureRateThreshold: 50 #超过50%则熔断
+#        # 慢请求时间阈值
+#        slow-call-duration-threshold: 2s
+#        # 慢请求率阈值
+#        slow-call-rate-threshold: 30
+#        # 滑动窗口类型
+#        sliding-window-type: TIME_BASED #表示使用基于时间的滑动窗口
+#        # 滑动窗口大小
+#        sliding-window-size: 2 #记录最近`2`秒的调用结果
+#        # 最小调用次数
+#        minimum-number-of-calls: 2 #计算失败率至少要6个请求
+#        # 自动从打开状态到半开状态
+#        automatic-transition-from-open-to-half-open-enabled: true
+#        # 打开状态的等待时间
+#        wait-duration-in-open-state: 10s
+#        # 半开状态允许的调用次数
+#        permitted-number-of-calls-in-half-open-state: 2 # 半开状态的允许最大的请求数量
+#        # 记录异常
+#        record-exceptions:
+#          - java.lang.Exception
+#    instances:
+#      # 服务的实例（为哪个服务配置断路器）
+#      cloud-provider-payment:
+#        # 使用default配置
+#        base-config: default
+#resilience4j:
+#  bulkhead:
+#    configs:
+#      default:
+#        # 最大并发调用数
+#        max-concurrent-calls: 2
+#        # 最大等待时间
+#        max-wait-duration: 1s
+#    instances:
+#      # 云提供者支付
+#      cloud-provider-payment:
+#        # 基础配置
+#        base-config: default
+#  timelimiter:
+#    configs:
+#      default:
+#        # 超时时间
+#        timeout-duration: 20s
+#resilience4j:
+#  # 配置超时时间
+#  timelimiter:
+#    configs:
+#      default:
+#        # 设置超时时间
+#        timeout-duration: 10s
+#  # 配置线程池
+#  thread-pool-bulkhead:
+#    configs:
+#      default:
+#        # 设置核心线程池大小
+#        core-thread-pool-size: 1
+#        # 设置最大线程池大小
+#        max-thread-pool-size: 1
+#        # 设置队列容量
+#        queue-capacity: 1
+#    # 实例配置
+#    instances:
+#      # 配置云提供者支付
+#      cloud-provider-payment:
+#        # 基础配置
+#        base-config: default
+resilience4j:
+  ratelimiter:
+    configs:
+      default:
+        # 在一次刷新周期最大的请求数
+        limit-for-period: 2
+        #  刷新周期
+        limit-refresh-period: 1s
+        # 线程等待时间
+        timeout-duration: 1
+    instances:
+      cloud-provider-payment:
+        base-config: default
+
+# ========================zipkin===================
+management:
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+  tracing:
+    sampling:
+      probability: 1.0 #采样率默认为0.1(0.1就是10次只能有一次被记录下来)，值越大收集越及时。v

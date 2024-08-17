@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cloud-provider-payment-nacos7001" />
+        <module name="cloud-sentinel-server8401" />
+        <module name="cloud-consumer-order-nacos7002" />
+        <module name="mybatis_generator" />
+        <module name="cloud-provider-payment8001" />
+        <module name="cloud-provider-payment9001" />
+        <module name="seata-account" />
+        <module name="cloud-gateway9527" />
+        <module name="cloud-consumer-fegin-order9002" />
+        <module name="cloud-config-naocs-client3377" />
+        <module name="cloud-consumer-order8002" />
+        <module name="seata-order" />
+        <module name="cloud-commons" />
+        <module name="seata-storage" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

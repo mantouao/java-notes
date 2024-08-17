@@ -1,0 +1,24 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        prefer-ip-address: true
+        service-name: ${spring.application.name}
+    gateway:
+      routes:
+        - id: cloud-gateway1 #  路由的ID，没有固定规则但要求唯一，建议配合服务名
+#          uri: http://localhost:8001
+          uri: lb://cloud-provider-payment # 指向服务提供者
+          predicates:     # 判断条件
+            - Path=/pay/gateway/get/**
+        - id: cloud-gateway2
+#          uri: http://localhost:8001
+          uri: lb://cloud-provider-payment
+          predicates:
+            - Path=/pay/gateway/info/**
